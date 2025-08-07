@@ -1,0 +1,36 @@
+package package1;
+
+import java.util.Scanner;
+
+public class Second_largest {
+
+	public static void main(String[] args) {
+		
+		int largest_no=Integer.MIN_VALUE;
+		int arr[]=new int[5];
+		
+		System.out.println("Enter the array ele=");
+		Scanner sc=new Scanner(System.in);
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("Array elements are=");
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+		
+		int largest_ele=Integer.MIN_VALUE;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			largest_ele=Math.max(largest_ele, arr[i]);
+		}
+        
+		System.out.println("Largest element from array="+largest_ele);
+	}
+
+}
