@@ -33,7 +33,7 @@ class Stack_Implementation
     }
     public boolean isFull()
     {
-        if(top==arr.length)
+        if(top==arr.length-1)
             return true;
         else 
             return false;
