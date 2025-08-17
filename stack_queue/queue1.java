@@ -35,7 +35,7 @@ class Queue_Implementation
         {
             System.out.println("Dequeue element="+arr[front]);
             front++;
-            if(front==rear)
+            if(front>=rear)
             {
                 front=rear=-1;
             }
