@@ -60,7 +60,7 @@ int evaluate(string exp)
                 operands.push(applyOp(no2,no1,op));
             }
             if(!oper.empty())
-                oper.pop(); //remove ')'
+                oper.pop(); //remove '('
         }
     
         else 
