@@ -63,6 +63,20 @@ class Node_Tree
         }
         
     }
+    public Node_Tree search (Node_Tree root, int key)
+    {
+        if(root==null || root.data==key)
+            return root;
+        if(root.data>key)
+            return search(root.left,key);
+        else
+            return search(root.right,key);
+    }
+
+    public boolean isValidBST(Node_Tree root,int min,int max)
+    {
+        
+    }
 }
 public class Tree_Creation
 {
@@ -70,8 +84,12 @@ public class Tree_Creation
     {
           System.out.println("Insert the ele in tree");
           Node_Tree root=new Node_Tree(12);
-          root.left=new Node_Tree(15);
+          root.left=new Node_Tree(8);
+          root.left.left=new Node_Tree(4);
+          root.left.right=new Node_Tree(10);
           root.right=new Node_Tree(25);
+          root.right.left=new Node_Tree(18);
+          root.right.right=new Node_Tree(32);
           System.out.println("Traversing in Tree");
           System.out.println("Preorder:-");
           root.preorder(root);
@@ -81,5 +99,10 @@ public class Tree_Creation
           root.postorder(root);   
           System.out.println("\n"+"Levelorder:-");
           root.levelOrder(root);
+          Scanner sc=new Scanner (System.in);
+          System.out.println("Enter the ele to search=");
+          int key=sc.nextInt();
+          System.out.println(root.search(root,key));
+          
     }
 }
