@@ -100,6 +100,14 @@ class Node_Tree
         }
         return temp.data;
     }
+    public int inorderpredecessor(Node_Tree root)
+    {
+         return max_node(root.left);
+    }
+    public int inordersuccessor(Node_Tree root)
+    {
+        return min_node(root.right);
+    }
 
     
 }
@@ -138,6 +146,7 @@ public class Tree_Creation
           System.out.println("Min ele of the tree="+root.min_node(root));
           System.out.println("Max ele of the tree="+root.max_node(root));
 
-          
+          System.out.println("Inorder Predecessor of tree="+root.inorderpredecessor(root));
+          System.out.println("Inorder Successor of tree="+root.inordersuccessor(root));
     }
 }
