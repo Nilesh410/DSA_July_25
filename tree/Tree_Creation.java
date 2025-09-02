@@ -75,8 +75,33 @@ class Node_Tree
 
     public boolean isValidBST(Node_Tree root,int min,int max)
     {
-        
+        if(root==null)
+            return true;
+        if(root.data<min || root.data>max)
+            return false;
+        return isValidBST(root.left,min,root.data)&& isValidBST(root.right,root.data,max);
     }
+
+    public int min_node(Node_Tree root)
+    {
+        Node_Tree temp=root;
+        while(temp.left!=null)
+        {
+            temp=temp.left;
+        }
+        return temp.data;
+    }
+    public int max_node(Node_Tree root)
+    {
+        Node_Tree temp=root;
+        while(temp.right!=null)
+        {
+            temp=temp.right;
+        }
+        return temp.data;
+    }
+
+    
 }
 public class Tree_Creation
 {
@@ -90,6 +115,7 @@ public class Tree_Creation
           root.right=new Node_Tree(25);
           root.right.left=new Node_Tree(18);
           root.right.right=new Node_Tree(32);
+
           System.out.println("Traversing in Tree");
           System.out.println("Preorder:-");
           root.preorder(root);
@@ -99,10 +125,19 @@ public class Tree_Creation
           root.postorder(root);   
           System.out.println("\n"+"Levelorder:-");
           root.levelOrder(root);
+
           Scanner sc=new Scanner (System.in);
           System.out.println("Enter the ele to search=");
           int key=sc.nextInt();
           System.out.println(root.search(root,key));
+
+          int max=Integer.MAX_VALUE;
+          int min=Integer.MIN_VALUE;
+          System.out.println(root.isValidBST(root,min,max));
+
+          System.out.println("Min ele of the tree="+root.min_node(root));
+          System.out.println("Max ele of the tree="+root.max_node(root));
+
           
     }
 }
