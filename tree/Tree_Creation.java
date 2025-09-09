@@ -46,6 +46,7 @@ class Node_Tree
         if(root==null)
             return;
         Queue <Node_Tree> q=new LinkedList<>();
+        
         q.add(root);
         while(!q.isEmpty())
         {
