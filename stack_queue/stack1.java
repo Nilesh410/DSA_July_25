@@ -84,7 +84,7 @@ public class stack1
             choice=sc.nextInt();
             switch(choice)
             {
-                case 1:System.out.println("Enter the element=");
+                case 1: System.out.println("Enter the element=");
                         int data=sc.nextInt();
                         st.push(data);
                         break;
